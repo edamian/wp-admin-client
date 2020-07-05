@@ -1,23 +1,50 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import {
+    Posts,
+    Categories,
+    Tags
+} from '../wp';
+
+import Jumbotron from './Jumbotron';
 
 const Menu = () => {
     return (
-        <div>
+        <Router>
             <ul className="nav">
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Home</a>
+                    <Link to="/" className="nav-link">Home</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Posts</a>
+                    <Link to="/posts" className="nav-link">Posts</Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Categories</a>
-                </li>
+                    <Link to="/categories" className="nav-link">Categories</Link>
+                </li>   
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Tags</a>
+                    <Link to="/tags" className="nav-link">Tags</Link>
                 </li>
             </ul>
-        </div>
+            <Switch>
+                <Route path="/posts">
+                    <Posts />
+                </Route>
+                <Route path="/categories">
+                    <Categories />
+                </Route>
+                <Route path="/tags">
+                    <Tags />
+                </Route>
+                <Route>
+                    <Jumbotron />
+                </Route>
+            </Switch>
+        </Router>
     );
 }
 

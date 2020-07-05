@@ -18,8 +18,6 @@ class Posts extends Component {
     }
 
     render() {
-        console.log(`state`);
-        console.log(this.state.posts);
         return (
             <div className="container">
                 <div className="row">

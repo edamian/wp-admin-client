@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { Tags, Categories } from '../';
 import wp from '../../../wp-api/client';
 
 class PostForm extends Component {
