@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import wp from '../../../wp-api/client';
+import { Link } from 'react-router-dom';
 
 class Posts extends Component {
 
     state = {
-        posts: []
+        posts: [],
     }
 
     componentDidMount() {
@@ -24,6 +25,9 @@ class Posts extends Component {
                     <h1>
                         My Posts
                     </h1>
+                </div>
+                <div className="row">
+                    <Link to="/posts/new">Nuevo</Link>
                 </div>
                 <div className="row">
                     {this.state.posts.map( (post) => (
