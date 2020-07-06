@@ -29,7 +29,7 @@ class Posts extends Component {
                     {this.state.posts.map( (post) => (
                         <article key={ post.id } className="col-12">
                             <h2>
-                                <a href={post.link} target="_blank">{ post.title.rendered }</a>
+                                <a href={post.link} target="_blank" rel="noopener noreferrer">{ post.title.rendered }</a>
                             </h2>
                             <div>
                                 <label> Status { post.status }</label>
