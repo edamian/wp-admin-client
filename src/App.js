@@ -1,16 +1,26 @@
 import React from 'react';
-import {Jumbotron, Menu, Footer} from './components/layout/';
-import { Posts, PostForm } from './components/wp/';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import {
+  Posts,
+  Categories,
+  Tags
+} from './components/wp';
 
+import { Jumbotron } from './components/layout';
+ 
 function App() {
   return (
-    <div className="App">
-      <Menu />
-      <Jumbotron />
-      <Posts />
-      <PostForm />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Jumbotron} />
+          <Route exact path="/posts" component={Posts} />
+          <Route exact path="/categories" component={Categories} />
+          <Route exact path="/tags" component={Tags}/>
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
